@@ -1,0 +1,15 @@
+import express from "express";
+import { createPost, deletepost, getallpost, getmypost, getpostbyid, getpostbyslug, updatepost } from "../controllers/Postcontroller.js";
+import { islogin } from "../middleware/islogin.js";
+import { isUser } from "../middleware/isUser.js";
+import { getservices } from "../controllers/Servicecontroller.js";
+const PostRouter=express.Router();
+PostRouter.post("/", islogin,isUser, createPost);
+PostRouter.get("/", getservices);
+PostRouter.delete("/delete/:postid", deletepost);
+PostRouter.get("/getmypost",islogin, getmypost);
+PostRouter.put("/update/:id", updatepost);
+PostRouter.get("/get/:id", getpostbyid);
+PostRouter.get("/get/slug/:slug", getpostbyslug);
+PostRouter.get("/getallposts",islogin,getallpost);
+export default PostRouter;

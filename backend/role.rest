@@ -1,0 +1,20 @@
+
+# POST http://localhost:8000/api/v1/auth/register
+# Content-Type: Application/json
+
+# {
+#     "username":"jbhddshgshg",
+#     "phone":"5522244",
+#     "email":"bira@gmail.com",
+#     "password":"55555",
+#     "role":"user"
+# }
+
+# POST http://localhost:8000/api/v1/auth/login
+# Content-Type: Application/json
+
+# {
+#     "email":"bira@gmail.com",
+#     "password":"55555",
+# }
+GET  http://localhost:8000/api/v1/service/getallservices
